@@ -23,7 +23,7 @@ showAlertDialog(
     title: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text("$alertTitle",
+        Text("$alertTitle", //title from passed param
             style: GoogleFonts.lato(
                 fontStyle: FontStyle.normal,
                 fontWeight: FontWeight.bold,
@@ -33,7 +33,7 @@ showAlertDialog(
       ],
     ),
     content: Text(
-      "$alertMessage",
+      "$alertMessage",//msg from passed param
       style: GoogleFonts.lato(
           color: myColor1[0], fontSize: 16, fontWeight: FontWeight.w300),
     ),
