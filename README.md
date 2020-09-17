@@ -6,7 +6,7 @@
 ## ScreenShot
 
 <img width=150 height=300 alt="HomeScreen Widget" src="./HomeScreen.jpg">
-*********************
+
 <img width=150 height=300 alt="HomeScreen Widget" src="./DetailsCountry.jpg">
-**********************
+
 <img width=150 height=300 alt="HomeScreen Widget" src="./Listview.jpg">
