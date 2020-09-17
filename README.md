@@ -1,7 +1,12 @@
 # covid_app
 
-A new Flutter application.
+COVID-19 Statistic APP, connecting to REST API real data with flutter plugins.
+
 
 ## Getting Started
 
-<img width=100 height=200 alt="HomeScreen Widget" src="./HomeScreen.jpg">
+<img width=150 height=300 alt="HomeScreen Widget" src="./HomeScreen.jpg">
+
+<img width=150 height=300 alt="HomeScreen Widget" src="./DetailsCountry.jpg">
+<br>
+<img width=150 height=300 alt="HomeScreen Widget" src="./Listview.jpg">
