@@ -24,12 +24,12 @@ class MyAppState extends State<MyApp> {
   Future<void> getSharedPrefs() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String country = prefs.getString('countryName').toString();
-    Future.delayed(Duration(seconds: 1), () async {
+    Future.delayed(Duration(seconds: 1), () async { // delay time for read pref data
       setState(() {
         if (country != "null")
           countryName = country;
         else
-          countryName = "Syrian Arab Republic";
+          countryName = "Syrian Arab Republic"; // set default country when init app for first time
       });
     });
   }
@@ -39,7 +39,7 @@ class MyAppState extends State<MyApp> {
     // TODO: implement initState
     super.initState();
 
-    getSharedPrefs();
+    getSharedPrefs(); // load pref
   }
 
   @override
@@ -52,11 +52,11 @@ class MyAppState extends State<MyApp> {
         splashscreenWidget: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/images/splash.png'),
+                image: AssetImage('assets/images/splash.png'), // background for splash
                 fit: BoxFit.cover),
           ),
         ),
-        timerInSeconds: 3,
+        timerInSeconds: 3, // duration for splash screen
       )),
     );
   }

@@ -16,21 +16,21 @@ class CountryList extends StatefulWidget {
 }
 
 class _CountryListState extends State<CountryList> {
-  List data;
-  List<Covid> list;
+  List data; // temp list
+  List<Covid> list; // covid list
  var isLoading = false;
 
 
   Future<String> getData() async {
     setState(() {
-      isLoading = true;
+      isLoading = true; // show progress indicator Loading
     });
 
-    var response = await http.get('https://corona.lmao.ninja/v2/countries');
+    var response = await http.get('https://corona.lmao.ninja/v2/countries'); //API for all countries
     this.setState(() {
       data = jsonDecode(response.body);
-      final convertedJsonObject = data.cast<Map<String, dynamic>>(); //edited
-      list = convertedJsonObject.map<Covid>((json) => Covid.fromJson(json)).toList(); //edited
+      final convertedJsonObject = data.cast<Map<String, dynamic>>(); //convert
+      list = convertedJsonObject.map<Covid>((json) => Covid.fromJson(json)).toList(); //add to list
     });
 
     setState(() {
@@ -45,7 +45,7 @@ class _CountryListState extends State<CountryList> {
   @override
   // ignore: must_call_super
   void initState() {
-    this.getData();
+    this.getData(); // getting data from API
   }
 
   @override
@@ -66,10 +66,10 @@ class _CountryListState extends State<CountryList> {
       ),
       body: Stack(
         children: [
-          backGround(context),
+          backGround(context), // background for all widget
           isLoading
               ? Center(
-                child: JumpingText(
+                child: JumpingText( // pluging for text effects when data loading
             'Loading...',
                     style: GoogleFonts.lato(
                         color: myColor1[0],
@@ -98,7 +98,7 @@ class _CountryListState extends State<CountryList> {
                       }));
                     },
                     title: Text(
-                      list[index].country,
+                      list[index].country, //country name 
                         style: GoogleFonts.lato(
                             color: myColor1[0],
                             fontSize: 16,
@@ -108,7 +108,7 @@ class _CountryListState extends State<CountryList> {
                     trailing: CircleAvatar(
                       backgroundColor: myColor1[1],
                       backgroundImage:
-                          NetworkImage(list[index].flag),
+                          NetworkImage(list[index].flag), // flag image
                       radius: 24,
                     )),
               );

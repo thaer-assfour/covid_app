@@ -12,7 +12,7 @@ class Covid {
   String continent;
   String flag;
 
-
+//covid constactor
   Covid(
       {this.updated,
       this.country,
@@ -27,6 +27,7 @@ class Covid {
       this.continent,
       this.flag});
 
+//from json map convert covid object
 
   factory Covid.fromJson(Map<String, dynamic> json) {
     return Covid(

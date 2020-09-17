@@ -17,7 +17,7 @@ class _SettingsState extends State<Settings> {
   String mySelection;
   var isLoading = false;
   var dataChanged = false;
-  final String url = "https://corona.lmao.ninja/v2/countries";
+  final String url = "https://corona.lmao.ninja/v2/countries"; //load country name from api to choose country for shared pref
   List data;
 
   Future<String> getData() async {
@@ -122,14 +122,14 @@ class _SettingsState extends State<Settings> {
                             fontSize: 16,
                             color: myColor1[2],
                             letterSpacing: 1.1)),
-                    disabledColor: myColor1[5].withOpacity(0.4),
+                    disabledColor: myColor1[5].withOpacity(0.4), // color of button when data not change
                     onPressed: dataChanged
                         ? () async {
-                            await SharedPreferencesHelper.setCountryName(
+                            await SharedPreferencesHelper.setCountryName( // save country to shared pref
                                 mySelection);
                             Navigator.push(context,
                                 MaterialPageRoute(builder: (context) {
-                              return HomeScreen(mySelection);
+                              return HomeScreen(mySelection); //return to home screen with new country data
                             }));
                           }
                         : null),

@@ -14,11 +14,7 @@ import 'myColor.dart';
 class CountryDetails extends StatefulWidget {
   final Covid cov;
   CountryDetails({this.cov});
-  final List<Color> colorList = [
-    Colors.indigo[200],
-    Colors.red[500],
-    Colors.greenAccent
-  ];
+
 
   @override
   _CountryDetailsState createState() => _CountryDetailsState();
@@ -31,7 +27,7 @@ class _CountryDetailsState extends State<CountryDetails> {
         appBar: AppBar(
           backgroundColor: myColor1[0],
           title: Text(
-            "Details For ${widget.cov.country}",
+            "Details For ${widget.cov.country}", // country name from passed param
             style: GoogleFonts.lato(
               fontStyle: FontStyle.normal,
               color: myColor1[2],
@@ -41,7 +37,7 @@ class _CountryDetailsState extends State<CountryDetails> {
         ),
         body: Stack(
           children: [
-            backGround(context),
+            backGround(context), // background widget
             Container(
               padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
               child: ListView(
@@ -60,9 +56,9 @@ class _CountryDetailsState extends State<CountryDetails> {
                         child: Material(
                           elevation: 12.0,
                           shape: CircleBorder(),
-                          child: CircleAvatar(
+                          child: CircleAvatar( // plugin to flag effects
                             backgroundColor: Colors.grey[100],
-                            backgroundImage: NetworkImage(widget.cov.flag),
+                            backgroundImage: NetworkImage(widget.cov.flag), // image link from passed param
                             radius: 48,
                           ),
                         ),
@@ -75,26 +71,26 @@ class _CountryDetailsState extends State<CountryDetails> {
                   details(
                       context: context,
                       name: "Name",
-                      val: widget.cov.country,
+                      val: widget.cov.country, //country name from passed param
                       link: 'assets/images/empty.png'),
                   details(
                       context: context,
-                      name: "All Case",
+                      name: "All Case", // number of cases from passed param
                       val: widget.cov.cases.toString(),
                       link: 'assets/images/Cases.png'),
                   details(
                       context: context,
-                      name: "Active",
+                      name: "Active", // number of active from passed param
                       val: widget.cov.active.toString(),
                       link: 'assets/images/active.png'),
                   details(
                       context: context,
-                      name: "Death",
+                      name: "Death", //number of death from passed param
                       val: widget.cov.deaths.toString(),
                       link: 'assets/images/deathes.png'),
                   details(
                       context: context,
-                      name: "Recover",
+                      name: "Recover", // number of recover from passed param
                       val: widget.cov.recovered.toString(),
                       link: 'assets/images/recover.png'),
                   Container(
@@ -110,7 +106,7 @@ class _CountryDetailsState extends State<CountryDetails> {
                             Orientation.portrait
                         ? pieChartWidget(context, widget.cov.active,
                             widget.cov.deaths, widget.cov.recovered)
-                        : null,
+                        : null,    // the chart is disable when mobile in landscape mode
                   ),
                   Container(
                       alignment: Alignment(0.0, 0.0),
@@ -118,7 +114,7 @@ class _CountryDetailsState extends State<CountryDetails> {
                               Orientation.portrait
                           ? Text(
                               "Last Updated at: " +
-                                  formatTime(widget.cov.updated),
+                                  formatTime(widget.cov.updated), // convert time stamp to time ago 
                               style: GoogleFonts.lato(
                                   color: myColor1[0],
                                   fontSize: 14,

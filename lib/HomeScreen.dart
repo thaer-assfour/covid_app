@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
     });
 
     final response =
-        await http.get("https://corona.lmao.ninja/v2/countries/$countryName");
+        await http.get("https://corona.lmao.ninja/v2/countries/$countryName"); // load from API to spicific country
     if (response.statusCode == 200) {
       map = json.decode(response.body);
 
@@ -80,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
         iconTheme: new IconThemeData(color: myColor1[2]),
       ),
       drawer: MediaQuery.of(context).orientation ==
-          Orientation.portrait ?MyDrawer() : null,
+          Orientation.portrait ?MyDrawer() : null, // hide drawer in landscape mode
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
@@ -111,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         )
                       : Container(
-                          width: MediaQuery.of(context).orientation ==
+                          width: MediaQuery.of(context).orientation == // change sizes when switch from portrait mode to landscape mode
                                   Orientation.portrait
                               ? MediaQuery.of(context).size.width / 1.2
                               : MediaQuery.of(context).size.width / 1.1,
@@ -150,7 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ))),
               Container(
                   child: !isLoading
-                      ? MediaQuery.of(context).orientation ==
+                      ? MediaQuery.of(context).orientation == // hide chart in landscape mode and hide last update time widget
                               Orientation.portrait
                           ? Column(
                               children: [
@@ -184,7 +184,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       : null),
             ],
           ),
-          Positioned(
+          Positioned( 
             bottom: 0,
             child: Center(
               child: Container(
