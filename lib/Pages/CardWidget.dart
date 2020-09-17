@@ -23,7 +23,7 @@ Widget cardWidget(context, String name, String val) {
         color: myColor1[2].withOpacity(0.7),
         elevation: 8,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly, // devide space between 2 element name and value
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Text(
