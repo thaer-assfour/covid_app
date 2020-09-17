@@ -9,10 +9,10 @@ Widget backGround (ctx){
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              myColor1[3].withOpacity(0.1),
-              myColor1[3].withOpacity(0.15),
-              myColor1[0].withOpacity(0.1),
-              myColor1[0].withOpacity(0.2),
+              myColor1[3].withOpacity(0.1), // starting color for backgroun widget
+              myColor1[3].withOpacity(0.15),// middle color for backgroun widget
+              myColor1[0].withOpacity(0.1),// middle color for backgroun widget
+              myColor1[0].withOpacity(0.2),// End color for backgroun widget
             ])),
   );
 }
